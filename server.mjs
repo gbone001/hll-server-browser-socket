@@ -155,6 +155,33 @@ masterCache.set("wdev2_servers", []);
 
 const expectedGameIds = new Set()
 
+function steamApiServerQuery() {
+    console.log("INFO Updating steam api server lists")
+
+    function queryServersForAppId(appid, cacheKey) {
+        expectedGameIds.add(appid)
+
+        const key = process.env.STEAM_API_KEY;
+        const url = `https://api.steampowered.com/IGameServersService/GetServerList/v1/?key=${key}&filter=appid\\${appid}&limit=10000`;
+
+        fetch(url).then(res => res.json()).then(json => {
+            const servers = (json?.response?.servers || []).flatMap(server => server.addr)
+            const filtered = union([servers])
+
+            console.log(`INFO ${cacheKey}/${appid} server list update [${filtered.length} servers (${servers.length} returned, ${servers.length - filtered.length} dupe(s))]`)
+
+            masterCache.set(cacheKey, filtered)
+        }).catch((err) => {
+            console.error("ERROR Failed to query steam api server list", err);
+        })
+    }
+
+    queryServersForAppId(686810, "live_servers")
+    queryServersForAppId(1504860, "pte_servers")
+    queryServersForAppId(3079210, "wdev1_servers")
+    queryServersForAppId(3132680, "wdev2_servers")
+}
+
 function masterServerQuery() {
     console.log("INFO Updating master server lists")
 
@@ -186,9 +213,13 @@ function masterServerQuery() {
     queryServersForAppId(3132680, "wdev2_servers")
 }
 
-setInterval(masterServerQuery, moment.duration(10, 'minutes').asMilliseconds())
-masterServerQuery()
-
+if (process.env.SERVER_LIST_METHOD === "webapi") {
+    setInterval(steamApiServerQuery, moment.duration(10, 'minutes').asMilliseconds())
+    steamApiServerQuery()
+} else if (process.env.SERVER_LIST_METHOD === "msqp") {
+    setInterval(masterServerQuery, moment.duration(10, 'minutes').asMilliseconds())
+    masterServerQuery()
+}
 
 const serverTTL = moment.duration(3, 'days');
 const serverTTLSec = serverTTL.asSeconds();
