@@ -1,7 +1,9 @@
+# GS: 1
 Foy
 Foy_N
 # DEV_B
 
+# GS: 2
 StMarie
 StMarie_N
 DEV_M_Night_SKM
@@ -9,59 +11,75 @@ DEV_M_Rain_SKM
 DEV_M_SKM
 # DEV_E
 
+# GS: 3
 Hurtgen
 Hurtgen_N
 
+# GS: 4
 Utah
 Utah_N
 
+# GS: 5
 Omaha
 Omaha_N
 # DEV_L
 
+# GS: 6
 SME
 SME_N
 DEV_I_MORNING_SKM
 DEV_I_NIGHT_SKM
 DEV_I_SKM
 
+# GS: 7
 PHL
 PHL_N
 DEV_K_Morning_SKM
 DEV_K_Night_SKM
 DEV_K_Rain_SKM
 
+# GS: 8
 Hill400
 Hill400_N
 DEV_H_Day_SKM
 DEV_H_Dusk_SKM
 
+# GS: 9
 CT
 CT_N
 DEV_F_DAY_SKM
 DEV_F_DUSK_SKM
 DEV_F_RAIN_SKM
 
+# GS: 10
 Kursk
 Kursk_N
 
+# GS: 11
 Stalin
 Stalin_N
+Stalin_OffensiveGER
+Stalin_OffensiveRUS
+DEV_R_DAY_SKM
 
+# GS: 12
 Remagen
 Remagen_N
 # DEV_J
 
+# GS: 13
 Kharkov
 Kharkov_N
 # DEV_A
 
+# GS: 14
 elalamein
 elalamein_N
 DEV_D_Day_SKM
 DEV_D_Night_SKM
 DEV_D_SKM
 
+# GS: 15
 Driel
 Driel_Day
 Driel_N
@@ -69,6 +87,7 @@ DEV_C_Day_SKM
 DEV_C_Night_SKM
 DEV_C_SKM
 
+# GS: 16
 Mortain
 Mortain_E
 Mortain_O
@@ -77,6 +96,7 @@ Mortain_SKM_Evening
 Mortain_SKM_Overcast
 
 # Elsenborn
+# GS: 17
 DEV_N
 DEV_N_Day_SKM
 DEV_N_Day_SMK
@@ -86,9 +106,13 @@ DEV_N_Night
 DEV_N_Night_SKM
 
 # Tobruk
+# GS: 18
 DEV_O
 DEV_O_DAY_SKM
 DEV_O_Dusk
 DEV_O_DUSK_SKM
 DEV_O_Morning
 DEV_O_MORNING_SKM
+
+# Smolensk
+# GS: 19
