@@ -61,6 +61,7 @@ Stalin_N
 Stalin_OffensiveGER
 Stalin_OffensiveRUS
 DEV_R_DAY_SKM
+DEV_R_OVERCAST_SKM
 
 # GS: 12
 Remagen
@@ -116,3 +117,9 @@ DEV_O_MORNING_SKM
 
 # Smolensk
 # GS: 19
+DEV_Q
+DEV_Q_DAY_SKM
+DEV_Q_DUSK
+DEV_Q_DUSK_SKM
+DEV_Q_NIGHT
+DEV_Q_NIGHT_SKM
